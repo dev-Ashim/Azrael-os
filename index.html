@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azrael-OS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="desktop">
+
+    
+      <div class="icons">
+        <div class="icon" id="Files" title="Files" role="button" aria-label="Open Files">
+          <img src="assets/icons/folder.svg" alt="Files">
+          <span>Files</span>
+        </div>
+        <div class="icon" id="iconTerminal" title="Terminal" role="button" aria-label="Open Terminal">
+          <img src="assets/icons/terminal.svg" alt="Terminal">
+          <span>Terminal</span>
+        </div>
+        <div class="icon" id="iconBrowser" title="Browser" role="button" aria-label="Open Browser">
+          <img src="assets/icons/globe.svg" alt="Browser">
+          <span>Browser</span>
+        </div>
+        <div class="icon" id="iconTrash" title="Trash" role="button" aria-label="Open Trash">
+          <img src="assets/icons/trash-2.svg" alt="Trash">
+          <span>Trash</span>
+        </div>
+        <div class="icon" id="iconNotes" title="Notes" role="button" aria-label="Open Notes">
+          <img src="assets/icons/notebook-pen.svg" alt="Notes">
+          <span>Notes</span>
+        </div>
+      </div>
+
+      
+      <div class="window explorer-window" id="explorer-window">
+
+        <div class="titlebar">
+          <div class="titlebar-left">
+            <img src="assets/icons/folder.svg" alt="" class="titlebar-icon">
+            <span class="titlebar-title">Explorer</span>
+          </div>
+          <div class="window-controls">
+            <button id="explorerMinimize" aria-label="Minimize"><img src="assets/icons/minus.svg" alt="Minimize"></button>
+            <button id="explorerMaximize" aria-label="Maximize"><img src="assets/icons/square.svg" alt="Maximize"></button>
+            <button id="explorerClose" class="btn-close" aria-label="Close"><img src="assets/icons/x.svg" alt="Close"></button>
+          </div>
+        </div>
+
+       
+        <div class="toolbar">
+          <span class="toolbar-path">📁 Home</span>
+        </div>
+
+       
+        <div class="window-body">
+
+      
+          <div class="sidebar">
+            <p class="sidebar-label">Quick Access</p>
+            <div class="sidebar-item active">
+              <img src="assets/icons/folder.svg" alt=""> Home
+            </div>
+            <div class="sidebar-item">
+              <img src="assets/icons/folder.svg" alt=""> Desktop
+            </div>
+            <div class="sidebar-item">
+              <img src="assets/icons/folder.svg" alt=""> Downloads
+            </div>
+            <div class="sidebar-item">
+              <img src="assets/icons/folder.svg" alt=""> Documents
+            </div>
+            <div class="sidebar-item">
+              <img src="assets/icons/trash-2.svg" alt=""> Trash
+            </div>
+          </div>
+
+        
+          <div class="content">
+            <div class="content-item">
+              <img src="assets/icons/folder.svg" alt="Desktop">
+              <span>Desktop</span>
+            </div>
+            <div class="content-item">
+              <img src="assets/icons/folder.svg" alt="Downloads">
+              <span>Downloads</span>
+            </div>
+            <div class="content-item">
+              <img src="assets/icons/folder.svg" alt="Pictures">
+              <span>Pictures</span>
+            </div>
+            <div class="content-item">
+              <img src="assets/icons/folder.svg" alt="Documents">
+              <span>Documents</span>
+            </div>
+            <div class="content-item">
+              <img src="assets/icons/folder.svg" alt="Projects">
+              <span>Projects</span>
+            </div>
+            <div class="content-item">
+              <img src="assets/icons/notebook-pen.svg" alt="Resume">
+              <span>Resume.pdf</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+     
+      <div class="window browser-window" id="browserWindow" style="display:none">
+        <div class="titlebar">
+          <div class="titlebar-left">
+            <img src="assets/icons/globe.svg" alt="" class="titlebar-icon">
+            <span class="titlebar-title">Browser</span>
+          </div>
+          <div class="window-controls">
+            <button data-action="minimize" data-target="browserWindow" aria-label="Minimize"><img src="assets/icons/minus.svg" alt="Minimize"></button>
+            <button data-action="maximize" data-target="browserWindow" aria-label="Maximize"><img src="assets/icons/square.svg" alt="Maximize"></button>
+            <button data-action="close" data-target="browserWindow" class="btn-close" aria-label="Close"><img src="assets/icons/x.svg" alt="Close"></button>
+          </div>
+        </div>
+        <div class="toolbar">
+          <input class="browser-url" id="browserUrl" value="https://www.google.com" />
+          <button class="browser-go" id="browserGo">Go</button>
+        </div>
+        <iframe id="browserFrame" src="https://www.google.com" class="app-frame" title="Browser"></iframe>
+      </div>
+
+      <!-- Notes Window -->
+      <div class="window notes-window" id="notesWindow" style="display:none">
+        <div class="titlebar">
+          <div class="titlebar-left">
+            <img src="assets/icons/notebook-pen.svg" alt="" class="titlebar-icon">
+            <span class="titlebar-title">Notes</span>
+          </div>
+          <div class="window-controls">
+            <button data-action="minimize" data-target="notesWindow" aria-label="Minimize"><img src="assets/icons/minus.svg" alt="Minimize"></button>
+            <button data-action="maximize" data-target="notesWindow" aria-label="Maximize"><img src="assets/icons/square.svg" alt="Maximize"></button>
+            <button data-action="close" data-target="notesWindow" class="btn-close" aria-label="Close"><img src="assets/icons/x.svg" alt="Close"></button>
+          </div>
+        </div>
+        <textarea class="notes-area" placeholder="Start typing your notes..."></textarea>
+      </div>
+
+      <!-- Terminal Window -->
+      <div class="window terminal-window" id="terminalWindow" style="display:none">
+        <div class="titlebar">
+          <div class="titlebar-left">
+            <img src="assets/icons/terminal.svg" alt="" class="titlebar-icon">
+            <span class="titlebar-title">Terminal</span>
+          </div>
+          <div class="window-controls">
+            <button data-action="minimize" data-target="terminalWindow" aria-label="Minimize"><img src="assets/icons/minus.svg" alt="Minimize"></button>
+            <button data-action="maximize" data-target="terminalWindow" aria-label="Maximize"><img src="assets/icons/square.svg" alt="Maximize"></button>
+            <button data-action="close" data-target="terminalWindow" class="btn-close" aria-label="Close"><img src="assets/icons/x.svg" alt="Close"></button>
+          </div>
+        </div>
+        <div class="terminal-body" id="terminalBody"></div>
+        <div class="terminal-input-row">
+          <span class="terminal-prompt">user@azrael:~$</span>
+          <input class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" />
+        </div>
+      </div>
+
+   
+      <div class="window trash-window" id="trashWindow" style="display:none">
+        <div class="titlebar">
+          <div class="titlebar-left">
+            <img src="assets/icons/trash-2.svg" alt="" class="titlebar-icon">
+            <span class="titlebar-title">Trash</span>
+          </div>
+          <div class="window-controls">
+            <button data-action="minimize" data-target="trashWindow" aria-label="Minimize"><img src="assets/icons/minus.svg" alt="Minimize"></button>
+            <button data-action="maximize" data-target="trashWindow" aria-label="Maximize"><img src="assets/icons/square.svg" alt="Maximize"></button>
+            <button data-action="close" data-target="trashWindow" class="btn-close" aria-label="Close"><img src="assets/icons/x.svg" alt="Close"></button>
+          </div>
+        </div>
+        <div class="trash-body">
+          <p class="trash-empty">🗑️ Trash is empty</p>
+        </div>
+      </div>
+
+     
+      <div class="taskbar">
+        <button class="start-btn" aria-label="Open Start Menu">
+          <img src="assets/icons/search.svg" alt=""> Start
+        </button>
+        <div class="taskbar-divider"></div>
+
+        <div class="taskbar-app" title="Files" role="button" aria-label="Files">
+          <img src="assets/icons/folder.svg" alt="Files">
+        </div>
+        <div class="taskbar-app" title="Browser" role="button" aria-label="Browser">
+          <img src="assets/icons/globe.svg" alt="Browser">
+        </div>
+        <div class="taskbar-app" title="Terminal" role="button" aria-label="Terminal">
+          <img src="assets/icons/terminal.svg" alt="Terminal">
+        </div>
+        <div class="taskbar-app" title="Notes" role="button" aria-label="Notes">
+          <img src="assets/icons/notebook-pen.svg" alt="Notes">
+        </div>
+        <div class="taskbar-app" title="Music" role="button" aria-label="Music">
+          <img src="assets/icons/music.svg" alt="Music">
+        </div>
+
+        <div class="taskbar-spacer"></div>
+
+        <div class="tray">
+          <img src="assets/icons/bluetooth.svg" alt="Bluetooth" class="tray-icon" aria-label="Bluetooth">
+          <img src="assets/icons/wifi.svg" alt="WiFi" class="tray-icon" aria-label="WiFi">
+          <img src="assets/icons/volume-2.svg" alt="Volume" class="tray-icon" aria-label="Volume">
+          <img src="assets/icons/battery-full.svg" alt="Battery" class="tray-icon" aria-label="Battery">
+        </div>
+
+        <div class="taskbar-divider"></div>
+
+     
+        <div class="time" aria-live="polite">
+          <div class="clockTime" id="clockTime"></div>
+          <div class="clockDate" id="clockDate"></div>
+        </div>
+      </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
