@@ -1,4 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <polyline points="4 17 10 11 4 5"/>
-  <line x1="12" y1="19" x2="20" y2="19"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d2d2d"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="gl" x1="0%" y1="0%" x2="0%" y2="60%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="rgba(0,0,0,0.5)"/></filter>
+  </defs>
+  <g filter="url(#s)">
+    <rect width="64" height="64" rx="14" fill="url(#a)"/>
+    <rect width="64" height="32" rx="14" fill="url(#gl)"/>
+    <!-- traffic lights -->
+    <circle cx="14" cy="13" r="4" fill="#FF5F57"/>
+    <circle cx="26" cy="13" r="4" fill="#FEBC2E"/>
+    <circle cx="38" cy="13" r="4" fill="#28C840"/>
+    <!-- prompt -->
+    <text x="10" y="36" font-family="'SF Mono',monospace" font-size="13" font-weight="bold" fill="#33FF66">&#x276F;_</text>
+    <text x="10" y="50" font-family="'SF Mono',monospace" font-size="7.5" fill="#33FF66" opacity="0.6">azrael@os ~ %</text>
+  </g>
 </svg>

@@ -7,222 +7,282 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="desktop">
+<div class="desktop">
 
-    
-      <div class="icons">
-        <div class="icon" id="Files" title="Files" role="button" aria-label="Open Files">
-          <img src="assets/icons/folder.svg" alt="Files">
-          <span>Files</span>
-        </div>
-        <div class="icon" id="iconTerminal" title="Terminal" role="button" aria-label="Open Terminal">
-          <img src="assets/icons/terminal.svg" alt="Terminal">
-          <span>Terminal</span>
-        </div>
-        <div class="icon" id="iconBrowser" title="Browser" role="button" aria-label="Open Browser">
-          <img src="assets/icons/globe.svg" alt="Browser">
-          <span>Browser</span>
-        </div>
-        <div class="icon" id="iconTrash" title="Trash" role="button" aria-label="Open Trash">
-          <img src="assets/icons/trash-2.svg" alt="Trash">
-          <span>Trash</span>
-        </div>
-        <div class="icon" id="iconNotes" title="Notes" role="button" aria-label="Open Notes">
-          <img src="assets/icons/notebook-pen.svg" alt="Notes">
-          <span>Notes</span>
-        </div>
+  <div class="icons">
+    <div class="icon" id="Files" title="Files"><img src="assets/icons/folder.svg" alt="Files"><span>Files</span></div>
+    <div class="icon" id="iconTerminal" title="Terminal"><img src="assets/icons/terminal.svg" alt="Terminal"><span>Terminal</span></div>
+    <div class="icon" id="iconBrowser" title="Browser"><img src="assets/icons/globe.svg" alt="Browser"><span>Browser</span></div>
+    <div class="icon" id="iconTrash" title="Trash"><img src="assets/icons/trash-2.svg" alt="Trash"><span>Trash</span></div>
+    <div class="icon" id="iconNotes" title="Notes"><img src="assets/icons/notebook-pen.svg" alt="Notes"><span>Notes</span></div>
+    <div class="icon" id="iconCalc" title="Calculator"><img src="assets/icons/calculator.svg" alt="Calculator"><span>Azrael Calc</span></div>
+  </div>
+
+
+  <div class="window explorer-window" id="explorer-window" style="display:none">
+    <div class="titlebar">
+      <div class="mac-controls">
+        <button class="mac-btn mac-close" id="explorerClose"></button>
+        <button class="mac-btn mac-minimize" id="explorerMinimize"></button>
+        <button class="mac-btn mac-maximize" id="explorerMaximize"></button>
       </div>
-
-      
-      <div class="window explorer-window" id="explorer-window">
-
-        <div class="titlebar">
-          <div class="titlebar-left">
-            <img src="assets/icons/folder.svg" alt="" class="titlebar-icon">
-            <span class="titlebar-title">Explorer</span>
-          </div>
-          <div class="window-controls">
-            <button id="explorerMinimize" aria-label="Minimize"><img src="assets/icons/minus.svg" alt="Minimize"></button>
-            <button id="explorerMaximize" aria-label="Maximize"><img src="assets/icons/square.svg" alt="Maximize"></button>
-            <button id="explorerClose" class="btn-close" aria-label="Close"><img src="assets/icons/x.svg" alt="Close"></button>
-          </div>
-        </div>
-
-       
-        <div class="toolbar">
-          <span class="toolbar-path">📁 Home</span>
-        </div>
-
-       
-        <div class="window-body">
-
-      
-          <div class="sidebar">
-            <p class="sidebar-label">Quick Access</p>
-            <div class="sidebar-item active">
-              <img src="assets/icons/folder.svg" alt=""> Home
-            </div>
-            <div class="sidebar-item">
-              <img src="assets/icons/folder.svg" alt=""> Desktop
-            </div>
-            <div class="sidebar-item">
-              <img src="assets/icons/folder.svg" alt=""> Downloads
-            </div>
-            <div class="sidebar-item">
-              <img src="assets/icons/folder.svg" alt=""> Documents
-            </div>
-            <div class="sidebar-item">
-              <img src="assets/icons/trash-2.svg" alt=""> Trash
-            </div>
-          </div>
-
-        
-          <div class="content">
-            <div class="content-item">
-              <img src="assets/icons/folder.svg" alt="Desktop">
-              <span>Desktop</span>
-            </div>
-            <div class="content-item">
-              <img src="assets/icons/folder.svg" alt="Downloads">
-              <span>Downloads</span>
-            </div>
-            <div class="content-item">
-              <img src="assets/icons/folder.svg" alt="Pictures">
-              <span>Pictures</span>
-            </div>
-            <div class="content-item">
-              <img src="assets/icons/folder.svg" alt="Documents">
-              <span>Documents</span>
-            </div>
-            <div class="content-item">
-              <img src="assets/icons/folder.svg" alt="Projects">
-              <span>Projects</span>
-            </div>
-            <div class="content-item">
-              <img src="assets/icons/notebook-pen.svg" alt="Resume">
-              <span>Resume.pdf</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-     
-      <div class="window browser-window" id="browserWindow" style="display:none">
-        <div class="titlebar">
-          <div class="titlebar-left">
-            <img src="assets/icons/globe.svg" alt="" class="titlebar-icon">
-            <span class="titlebar-title">Browser</span>
-          </div>
-          <div class="window-controls">
-            <button data-action="minimize" data-target="browserWindow" aria-label="Minimize"><img src="assets/icons/minus.svg" alt="Minimize"></button>
-            <button data-action="maximize" data-target="browserWindow" aria-label="Maximize"><img src="assets/icons/square.svg" alt="Maximize"></button>
-            <button data-action="close" data-target="browserWindow" class="btn-close" aria-label="Close"><img src="assets/icons/x.svg" alt="Close"></button>
-          </div>
-        </div>
-        <div class="toolbar">
-          <input class="browser-url" id="browserUrl" value="https://www.google.com" />
-          <button class="browser-go" id="browserGo">Go</button>
-        </div>
-        <iframe id="browserFrame" src="https://www.google.com" class="app-frame" title="Browser"></iframe>
-      </div>
-
-      <!-- Notes Window -->
-      <div class="window notes-window" id="notesWindow" style="display:none">
-        <div class="titlebar">
-          <div class="titlebar-left">
-            <img src="assets/icons/notebook-pen.svg" alt="" class="titlebar-icon">
-            <span class="titlebar-title">Notes</span>
-          </div>
-          <div class="window-controls">
-            <button data-action="minimize" data-target="notesWindow" aria-label="Minimize"><img src="assets/icons/minus.svg" alt="Minimize"></button>
-            <button data-action="maximize" data-target="notesWindow" aria-label="Maximize"><img src="assets/icons/square.svg" alt="Maximize"></button>
-            <button data-action="close" data-target="notesWindow" class="btn-close" aria-label="Close"><img src="assets/icons/x.svg" alt="Close"></button>
-          </div>
-        </div>
-        <textarea class="notes-area" placeholder="Start typing your notes..."></textarea>
-      </div>
-
-      <!-- Terminal Window -->
-      <div class="window terminal-window" id="terminalWindow" style="display:none">
-        <div class="titlebar">
-          <div class="titlebar-left">
-            <img src="assets/icons/terminal.svg" alt="" class="titlebar-icon">
-            <span class="titlebar-title">Terminal</span>
-          </div>
-          <div class="window-controls">
-            <button data-action="minimize" data-target="terminalWindow" aria-label="Minimize"><img src="assets/icons/minus.svg" alt="Minimize"></button>
-            <button data-action="maximize" data-target="terminalWindow" aria-label="Maximize"><img src="assets/icons/square.svg" alt="Maximize"></button>
-            <button data-action="close" data-target="terminalWindow" class="btn-close" aria-label="Close"><img src="assets/icons/x.svg" alt="Close"></button>
-          </div>
-        </div>
-        <div class="terminal-body" id="terminalBody"></div>
-        <div class="terminal-input-row">
-          <span class="terminal-prompt">user@azrael:~$</span>
-          <input class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" />
-        </div>
-      </div>
-
-   
-      <div class="window trash-window" id="trashWindow" style="display:none">
-        <div class="titlebar">
-          <div class="titlebar-left">
-            <img src="assets/icons/trash-2.svg" alt="" class="titlebar-icon">
-            <span class="titlebar-title">Trash</span>
-          </div>
-          <div class="window-controls">
-            <button data-action="minimize" data-target="trashWindow" aria-label="Minimize"><img src="assets/icons/minus.svg" alt="Minimize"></button>
-            <button data-action="maximize" data-target="trashWindow" aria-label="Maximize"><img src="assets/icons/square.svg" alt="Maximize"></button>
-            <button data-action="close" data-target="trashWindow" class="btn-close" aria-label="Close"><img src="assets/icons/x.svg" alt="Close"></button>
-          </div>
-        </div>
-        <div class="trash-body">
-          <p class="trash-empty">🗑️ Trash is empty</p>
-        </div>
-      </div>
-
-     
-      <div class="taskbar">
-        <button class="start-btn" aria-label="Open Start Menu">
-          <img src="assets/icons/search.svg" alt=""> Start
-        </button>
-        <div class="taskbar-divider"></div>
-
-        <div class="taskbar-app" title="Files" role="button" aria-label="Files">
-          <img src="assets/icons/folder.svg" alt="Files">
-        </div>
-        <div class="taskbar-app" title="Browser" role="button" aria-label="Browser">
-          <img src="assets/icons/globe.svg" alt="Browser">
-        </div>
-        <div class="taskbar-app" title="Terminal" role="button" aria-label="Terminal">
-          <img src="assets/icons/terminal.svg" alt="Terminal">
-        </div>
-        <div class="taskbar-app" title="Notes" role="button" aria-label="Notes">
-          <img src="assets/icons/notebook-pen.svg" alt="Notes">
-        </div>
-        <div class="taskbar-app" title="Music" role="button" aria-label="Music">
-          <img src="assets/icons/music.svg" alt="Music">
-        </div>
-
-        <div class="taskbar-spacer"></div>
-
-        <div class="tray">
-          <img src="assets/icons/bluetooth.svg" alt="Bluetooth" class="tray-icon" aria-label="Bluetooth">
-          <img src="assets/icons/wifi.svg" alt="WiFi" class="tray-icon" aria-label="WiFi">
-          <img src="assets/icons/volume-2.svg" alt="Volume" class="tray-icon" aria-label="Volume">
-          <img src="assets/icons/battery-full.svg" alt="Battery" class="tray-icon" aria-label="Battery">
-        </div>
-
-        <div class="taskbar-divider"></div>
-
-     
-        <div class="time" aria-live="polite">
-          <div class="clockTime" id="clockTime"></div>
-          <div class="clockDate" id="clockDate"></div>
-        </div>
-      </div>
-
+      <span class="titlebar-title">Explorer</span>
+      <div class="titlebar-spacer"></div>
     </div>
-    <script src="script.js"></script>
+    <div class="toolbar"><span class="toolbar-path">📁 Home</span></div>
+    <div class="window-body">
+      <div class="sidebar">
+        <p class="sidebar-label">Quick Access</p>
+        <div class="sidebar-item active"><img src="assets/icons/folder.svg" alt=""> Home</div>
+        <div class="sidebar-item"><img src="assets/icons/folder.svg" alt=""> Desktop</div>
+        <div class="sidebar-item"><img src="assets/icons/folder.svg" alt=""> Downloads</div>
+        <div class="sidebar-item"><img src="assets/icons/folder.svg" alt=""> Documents</div>
+        <div class="sidebar-item"><img src="assets/icons/trash-2.svg" alt=""> Trash</div>
+      </div>
+      <div class="content">
+        <div class="content-item"><img src="assets/icons/folder.svg" alt="Desktop"><span>Desktop</span></div>
+        <div class="content-item"><img src="assets/icons/folder.svg" alt="Downloads"><span>Downloads</span></div>
+        <div class="content-item"><img src="assets/icons/folder.svg" alt="Pictures"><span>Pictures</span></div>
+        <div class="content-item"><img src="assets/icons/folder.svg" alt="Documents"><span>Documents</span></div>
+        <div class="content-item"><img src="assets/icons/folder.svg" alt="Projects"><span>Projects</span></div>
+        <div class="content-item"><img src="assets/icons/notebook-pen.svg" alt="Resume"><span>Resume.pdf</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Browser Window -->
+  <div class="window browser-window" id="browserWindow" style="display:none">
+    <div class="titlebar browser-titlebar">
+      <div class="mac-controls">
+        <button class="mac-btn mac-close" data-action="close" data-target="browserWindow"></button>
+        <button class="mac-btn mac-minimize" data-action="minimize" data-target="browserWindow"></button>
+        <button class="mac-btn mac-maximize" data-action="maximize" data-target="browserWindow"></button>
+      </div>
+      <div class="browser-tabs">
+        <div class="browser-tab active">
+          <img src="assets/icons/globe.svg" class="tab-favicon" alt="">
+          <span class="tab-title" id="tabTitle">New Tab</span>
+          <button class="tab-close">&#x2715;</button>
+        </div>
+        <button class="tab-add">+</button>
+      </div>
+      <div class="titlebar-spacer"></div>
+    </div>
+    <div class="browser-navbar">
+      <button class="nav-btn" id="btnBack">&#8592;</button>
+      <button class="nav-btn" id="btnForward">&#8594;</button>
+      <button class="nav-btn" id="btnRefresh">&#8635;</button>
+      <div class="url-bar-wrap">
+        <span class="url-lock">&#128274;</span>
+        <input class="url-bar" id="browserUrl" placeholder="Search or enter URL..." />
+      </div>
+      <button class="nav-btn nav-go" id="browserGo">Go</button>
+    </div>
+    <div class="browser-newtab" id="browserNewTab">
+      <div class="newtab-logo">🌐</div>
+      <h2 class="newtab-title">Azrael Browser</h2>
+      <div class="newtab-search">
+        <input class="newtab-input" id="newtabSearch" placeholder="Search the web..." />
+        <button class="newtab-go" id="newtabGo">&#8594;</button>
+      </div>
+      <div class="newtab-shortcuts">
+        <a class="shortcut" href="#" data-url="https://google.com">🔍<span>Google</span></a>
+        <a class="shortcut" href="#" data-url="https://youtube.com">▶️<span>YouTube</span></a>
+        <a class="shortcut" href="#" data-url="https://github.com">🐙<span>GitHub</span></a>
+        <a class="shortcut" href="#" data-url="https://wikipedia.org">📖<span>Wikipedia</span></a>
+        <a class="shortcut" href="#" data-url="https://reddit.com">💬<span>Reddit</span></a>
+        <a class="shortcut" href="#" data-url="https://twitter.com">🐦<span>Twitter</span></a>
+      </div>
+    </div>
+    <iframe id="browserFrame" class="app-frame" style="display:none" title="Browser" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"></iframe>
+  </div>
+
+  <!-- Notes Window -->
+  <div class="window notes-window" id="notesWindow" style="display:none">
+    <div class="titlebar">
+      <div class="mac-controls">
+        <button class="mac-btn mac-close" data-action="close" data-target="notesWindow"></button>
+        <button class="mac-btn mac-minimize" data-action="minimize" data-target="notesWindow"></button>
+        <button class="mac-btn mac-maximize" data-action="maximize" data-target="notesWindow"></button>
+      </div>
+      <span class="titlebar-title">Notes</span>
+      <div class="titlebar-spacer"></div>
+    </div>
+    <textarea class="notes-area" placeholder="Start typing your notes..."></textarea>
+  </div>
+
+  <!-- Terminal Window -->
+  <div class="window terminal-window" id="terminalWindow" style="display:none">
+    <div class="titlebar">
+      <div class="mac-controls">
+        <button class="mac-btn mac-close" data-action="close" data-target="terminalWindow"></button>
+        <button class="mac-btn mac-minimize" data-action="minimize" data-target="terminalWindow"></button>
+        <button class="mac-btn mac-maximize" data-action="maximize" data-target="terminalWindow"></button>
+      </div>
+      <span class="titlebar-title">Terminal — zsh</span>
+      <div class="titlebar-spacer"></div>
+    </div>
+    <div class="terminal-body" id="terminalBody"></div>
+    <div class="terminal-input-row">
+      <span class="terminal-prompt">user@azrael ~ %</span>
+      <input class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" />
+    </div>
+  </div>
+
+  <!-- Trash Window -->
+  <div class="window trash-window" id="trashWindow" style="display:none">
+    <div class="titlebar">
+      <div class="mac-controls">
+        <button class="mac-btn mac-close" data-action="close" data-target="trashWindow"></button>
+        <button class="mac-btn mac-minimize" data-action="minimize" data-target="trashWindow"></button>
+        <button class="mac-btn mac-maximize" data-action="maximize" data-target="trashWindow"></button>
+      </div>
+      <span class="titlebar-title">Trash</span>
+      <div class="titlebar-spacer"></div>
+    </div>
+    <div class="trash-body"><p class="trash-empty">🗑️ Trash is empty</p></div>
+  </div>
+
+  <!-- Calculator Window -->
+  <div class="window calc-window" id="calcWindow" style="display:none">
+    <div class="titlebar">
+      <div class="mac-controls">
+        <button class="mac-btn mac-close" data-action="close" data-target="calcWindow"></button>
+        <button class="mac-btn mac-minimize" data-action="minimize" data-target="calcWindow"></button>
+        <button class="mac-btn mac-maximize" data-action="maximize" data-target="calcWindow"></button>
+      </div>
+      <span class="titlebar-title">Azrael OS Calculator</span>
+      <div class="titlebar-spacer"></div>
+    </div>
+    <div class="calc-tabs">
+      <button class="calc-tab active" data-mode="standard">Standard</button>
+      <button class="calc-tab" data-mode="scientific">Scientific</button>
+      <button class="calc-tab" data-mode="physics">Physics</button>
+      <button class="calc-tab" data-mode="currency">Currency</button>
+      <button class="calc-tab" data-mode="unit">Unit</button>
+    </div>
+    <div class="calc-mode active" id="mode-standard">
+      <div class="calc-display"><div class="calc-expr" id="stdExpr"></div><div class="calc-result" id="stdResult">0</div></div>
+      <div class="calc-grid">
+        <button class="calc-btn span2" data-val="AC">AC</button>
+        <button class="calc-btn" data-val="&#9003;">&#9003;</button>
+        <button class="calc-btn op" data-val="/">&divide;</button>
+        <button class="calc-btn" data-val="7">7</button><button class="calc-btn" data-val="8">8</button><button class="calc-btn" data-val="9">9</button>
+        <button class="calc-btn op" data-val="*">&times;</button>
+        <button class="calc-btn" data-val="4">4</button><button class="calc-btn" data-val="5">5</button><button class="calc-btn" data-val="6">6</button>
+        <button class="calc-btn op" data-val="-">&minus;</button>
+        <button class="calc-btn" data-val="1">1</button><button class="calc-btn" data-val="2">2</button><button class="calc-btn" data-val="3">3</button>
+        <button class="calc-btn op" data-val="+">+</button>
+        <button class="calc-btn" data-val="+/-">+/&minus;</button><button class="calc-btn" data-val="0">0</button>
+        <button class="calc-btn" data-val=".">.</button>
+        <button class="calc-btn eq" data-val="=">=</button>
+      </div>
+    </div>
+    <div class="calc-mode" id="mode-scientific">
+      <div class="calc-display"><div class="calc-expr" id="sciExpr"></div><div class="calc-result" id="sciResult">0</div></div>
+      <div class="calc-grid sci-grid">
+        <button class="calc-btn fn" data-sci="sin">sin</button><button class="calc-btn fn" data-sci="cos">cos</button>
+        <button class="calc-btn fn" data-sci="tan">tan</button><button class="calc-btn fn" data-sci="log">log</button>
+        <button class="calc-btn fn" data-sci="ln">ln</button><button class="calc-btn fn" data-sci="sqrt">&radic;</button>
+        <button class="calc-btn fn" data-sci="sq">x&sup2;</button><button class="calc-btn fn" data-sci="inv">1/x</button>
+        <button class="calc-btn fn" data-sci="pi">&pi;</button><button class="calc-btn fn" data-sci="e">e</button>
+        <button class="calc-btn fn" data-sci="pow">x&#696;</button><button class="calc-btn fn" data-sci="fact">n!</button>
+        <button class="calc-btn span2" data-val="AC">AC</button><button class="calc-btn" data-val="&#9003;">&#9003;</button>
+        <button class="calc-btn op" data-val="/">&divide;</button>
+        <button class="calc-btn" data-val="7">7</button><button class="calc-btn" data-val="8">8</button><button class="calc-btn" data-val="9">9</button>
+        <button class="calc-btn op" data-val="*">&times;</button>
+        <button class="calc-btn" data-val="4">4</button><button class="calc-btn" data-val="5">5</button><button class="calc-btn" data-val="6">6</button>
+        <button class="calc-btn op" data-val="-">&minus;</button>
+        <button class="calc-btn" data-val="1">1</button><button class="calc-btn" data-val="2">2</button><button class="calc-btn" data-val="3">3</button>
+        <button class="calc-btn op" data-val="+">+</button>
+        <button class="calc-btn" data-val="+/-">+/&minus;</button><button class="calc-btn" data-val="0">0</button>
+        <button class="calc-btn" data-val=".">.</button><button class="calc-btn eq" data-val="=">=</button>
+      </div>
+    </div>
+    <div class="calc-mode" id="mode-physics">
+      <div class="calc-display"><div class="calc-result" id="physResult">Select a formula</div></div>
+      <div class="physics-list">
+        <div class="phys-formula" data-formula="newton">F = ma &nbsp;<small>Force</small></div>
+        <div class="phys-formula" data-formula="kinetic">KE = &frac12;mv&sup2; &nbsp;<small>Kinetic Energy</small></div>
+        <div class="phys-formula" data-formula="potential">PE = mgh &nbsp;<small>Potential Energy</small></div>
+        <div class="phys-formula" data-formula="velocity">v = u + at &nbsp;<small>Velocity</small></div>
+        <div class="phys-formula" data-formula="ohm">V = IR &nbsp;<small>Ohm's Law</small></div>
+        <div class="phys-formula" data-formula="power">P = IV &nbsp;<small>Electric Power</small></div>
+        <div class="phys-formula" data-formula="wave">v = f&lambda; &nbsp;<small>Wave Speed</small></div>
+        <div class="phys-formula" data-formula="einstein">E = mc&sup2; &nbsp;<small>Mass-Energy</small></div>
+      </div>
+      <div class="phys-inputs" id="physInputs"></div>
+      <button class="calc-btn eq" id="physCalc" style="margin:0.5rem;border-radius:0.375rem">Calculate</button>
+    </div>
+    <div class="calc-mode" id="mode-currency">
+      <div class="calc-display"><div class="calc-result" id="currResult">Enter amount</div></div>
+      <div class="currency-row">
+        <input type="number" id="currAmount" class="conv-input" placeholder="Amount" />
+        <select id="currFrom" class="conv-select">
+          <option value="USD">USD $</option><option value="EUR">EUR &euro;</option><option value="GBP">GBP &pound;</option>
+          <option value="JPY">JPY &yen;</option><option value="INR">INR &#8377;</option><option value="CAD">CAD $</option>
+          <option value="AUD">AUD $</option><option value="CNY">CNY &yen;</option><option value="CHF">CHF</option><option value="KRW">KRW &#8361;</option>
+        </select>
+        <span style="color:#aaa">&rarr;</span>
+        <select id="currTo" class="conv-select">
+          <option value="EUR">EUR &euro;</option><option value="USD">USD $</option><option value="GBP">GBP &pound;</option>
+          <option value="JPY">JPY &yen;</option><option value="INR">INR &#8377;</option><option value="CAD">CAD $</option>
+          <option value="AUD">AUD $</option><option value="CNY">CNY &yen;</option><option value="CHF">CHF</option><option value="KRW">KRW &#8361;</option>
+        </select>
+      </div>
+      <button class="calc-btn eq" id="currConvert" style="margin:0.5rem;border-radius:0.375rem">Convert</button>
+      <p style="font-size:0.65rem;color:#555;padding:0 0.75rem">* Approximate fixed rates.</p>
+    </div>
+    <div class="calc-mode" id="mode-unit">
+      <div class="calc-display"><div class="calc-result" id="unitResult">Enter value</div></div>
+      <div class="currency-row">
+        <select id="unitCategory" class="conv-select">
+          <option value="length">Length</option><option value="weight">Weight</option>
+          <option value="temp">Temperature</option><option value="speed">Speed</option><option value="area">Area</option>
+        </select>
+      </div>
+      <div class="currency-row" style="margin-top:0.4rem">
+        <input type="number" id="unitAmount" class="conv-input" placeholder="Value" />
+        <select id="unitFrom" class="conv-select"></select>
+        <span style="color:#aaa">&rarr;</span>
+        <select id="unitTo" class="conv-select"></select>
+      </div>
+      <button class="calc-btn eq" id="unitConvert" style="margin:0.5rem;border-radius:0.375rem">Convert</button>
+    </div>
+  </div>
+
+  <!-- macOS Dock -->
+  <div class="dock">
+    <div class="dock-inner">
+      <div class="dock-item" id="dockFiles" title="Files"><img src="assets/icons/folder.svg" alt="Files"><span>Files</span></div>
+      <div class="dock-item" id="dockBrowser" title="Browser"><img src="assets/icons/globe.svg" alt="Browser"><span>Browser</span></div>
+      <div class="dock-item" id="dockTerminal" title="Terminal"><img src="assets/icons/terminal.svg" alt="Terminal"><span>Terminal</span></div>
+      <div class="dock-item" id="dockNotes" title="Notes"><img src="assets/icons/notebook-pen.svg" alt="Notes"><span>Notes</span></div>
+      <div class="dock-item" id="dockCalc" title="Calculator"><img src="assets/icons/calculator.svg" alt="Calculator"><span>Calc</span></div>
+      <div class="dock-separator"></div>
+      <div class="dock-item" id="dockTrash" title="Trash"><img src="assets/icons/trash-2.svg" alt="Trash"><span>Trash</span></div>
+    </div>
+  </div>
+
+  <!-- Menu Bar -->
+  <div class="menubar">
+    <span class="menubar-apple">&#63743;</span>
+    <span class="menubar-item">Azrael OS</span>
+    <span class="menubar-item">File</span>
+    <span class="menubar-item">Edit</span>
+    <span class="menubar-item">View</span>
+    <div class="menubar-right">
+      <img src="assets/icons/wifi.svg" alt="WiFi" class="tray-icon">
+      <img src="assets/icons/volume-2.svg" alt="Volume" class="tray-icon">
+      <img src="assets/icons/battery-full.svg" alt="Battery" class="tray-icon">
+      <div class="menubar-clock">
+        <span id="clockTime"></span>
+        <span id="clockDate"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="script.js"></script>
 </body>
 </html>

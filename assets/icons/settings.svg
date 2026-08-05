@@ -1,4 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
-  <circle cx="12" cy="12" r="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="setg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#90A4AE"/>
+      <stop offset="100%" stop-color="#455A64"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 4 L36 12 Q40 11 43 13 L50 8 L56 14 L51 21 Q53 24 53 28 L62 30 L62 34 L53 36 Q53 40 51 43 L56 50 L50 56 L43 51 Q40 53 36 52 L34 60 L30 60 L28 52 Q24 53 21 51 L14 56 L8 50 L13 43 Q11 40 11 36 L2 34 L2 30 L11 28 Q11 24 13 21 L8 14 L14 8 L21 13 Q24 11 28 12 Z" fill="url(#setg)"/>
+  <circle cx="32" cy="32" r="10" fill="#1C2B33"/>
+  <circle cx="32" cy="32" r="6" fill="url(#setg)" opacity="0.6"/>
 </svg>

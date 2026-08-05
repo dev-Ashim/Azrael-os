@@ -1,8 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/>
-  <path d="M2 6h4"/>
-  <path d="M2 10h4"/>
-  <path d="M2 14h4"/>
-  <path d="M2 18h4"/>
-  <path d="M21.378 3.626a1 1 0 0 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF176"/>
+      <stop offset="100%" stop-color="#F9A825"/>
+    </linearGradient>
+    <linearGradient id="gl" x1="0%" y1="0%" x2="0%" y2="60%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="rgba(0,0,0,0.35)"/></filter>
+  </defs>
+  <g filter="url(#s)">
+    <rect x="6" y="4" width="52" height="56" rx="8" fill="url(#bg)"/>
+    <!-- header bar -->
+    <rect x="6" y="4" width="52" height="14" rx="8" fill="#F9A825"/>
+    <rect x="6" y="11" width="52" height="7" fill="#F9A825"/>
+    <!-- lines -->
+    <line x1="14" y1="26" x2="50" y2="26" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="14" y1="33" x2="50" y2="33" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="14" y1="40" x2="50" y2="40" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="14" y1="47" x2="38" y2="47" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- glass shine -->
+    <rect x="6" y="4" width="52" height="28" rx="8" fill="url(#gl)"/>
+    <!-- title text -->
+    <text x="32" y="14" font-family="-apple-system,sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">Notes</text>
+  </g>
 </svg>
